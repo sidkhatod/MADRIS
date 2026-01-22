@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Government/Emergency Operations Design System */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Dark Navy - Authoritative, Trustworthy */
+    --primary: 215 50% 23%;
+    --primary-foreground: 210 20% 98%;
+
+    /* Slate Gray - Professional */
+    --secondary: 215 15% 91%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 215 15% 95%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Subtle blue accent */
+    --accent: 210 60% 94%;
+    --accent-foreground: 215 50% 23%;
+
+    /* Alert/Warning - Amber */
+    --destructive: 25 95% 53%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --critical: 0 72% 51%;
+    --critical-foreground: 0 0% 100%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 215 50% 40%;
+
+    --radius: 0.375rem;
+
+    /* Sidebar - Darker theme for contrast */
+    --sidebar-background: 215 50% 15%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 210 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 45% 22%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 40% 25%;
+    --sidebar-ring: 210 60% 55%;
+    --sidebar-muted: 215 30% 35%;
+  }
+
+  .dark {
+    --background: 215 50% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 45% 13%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 45% 13%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 60% 55%;
+    --primary-foreground: 215 50% 10%;
+
+    --secondary: 215 35% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 35% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 215 35% 20%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 35% 22%;
+    --input: 215 35% 22%;
+    --ring: 210 60% 55%;
+
+    --sidebar-background: 215 55% 8%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 45% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 40% 18%;
+    --sidebar-ring: 210 60% 55%;
+    --sidebar-muted: 215 30% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-all duration-200;
+    @apply text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground;
+  }
+
+  .nav-item-active {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground border-l-2 border-sidebar-primary;
+  }
+
+  .page-header {
+    @apply border-b border-border bg-card px-6 py-4;
+  }
+
+  .page-title {
+    @apply text-xl font-semibold text-foreground;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-muted-foreground mt-0.5;
+  }
+
+  .content-card {
+    @apply rounded-lg border border-border bg-card p-5 shadow-sm;
+  }
+
+  .status-indicator {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .status-normal {
+    @apply bg-emerald-500/10 text-emerald-600;
+  }
+
+  .status-elevated {
+    @apply bg-amber-500/10 text-amber-600;
+  }
+
+  .status-critical {
+    @apply bg-red-500/10 text-red-600;
+  }
+}
