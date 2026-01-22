@@ -1,10 +1,20 @@
-flask==3.0.0
-flask-cors==4.0.0
-python-dotenv==1.0.0
-groq==0.4.2
-huggingface-hub==0.20.0
-qdrant-client==1.16.2
-requests==2.31.0
-numpy==1.26.0
-tiktoken==0.5.0
-gunicorn==21.2.0
+# flask==3.0.0
+# flask-cors==4.0.0
+# python-dotenv==1.0.0
+# groq==0.4.2
+# huggingface-hub==0.20.0
+# qdrant-client==1.16.2
+# requests==2.31.0
+# numpy==1.26.0
+# tiktoken==0.5.0
+# gunicorn==21.2.0
+flask>=3.0,<3.1
+flask-cors>=4.0,<5.0
+python-dotenv>=1.0,<2.0
+groq>=0.4.2,<0.5.0
+huggingface-hub>=0.20,<0.22
+qdrant-client>=1.16,<1.17
+requests>=2.31,<3.0
+numpy>=1.25,<1.27
+tiktoken>=0.5,<0.6
+gunicorn>=21.2,<22.0
